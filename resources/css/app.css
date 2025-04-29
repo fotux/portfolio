@@ -1,0 +1,28 @@
+@import 'tailwindcss';
+@source "../views";
+
+@source '../../vendor/laravel/framework/src/Illuminate/Pagination/resources/views/*.blade.php';
+@source '../../storage/framework/views/*.php';
+@source '../**/*.blade.php';
+@source '../**/*.js';
+
+@theme {
+    --font-sans: 'Open Sans', 'Hanken Grotesk', ui-sans-serif, system-ui, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
+    --font-serif: 'Libre Baskerville', 'Playfair Display', ui-serif, Georgia, Cambria, "Times New Roman", Times, serif;
+}
+
+@keyframes slidermove {
+    0% {transform: translateX(0);}
+    100% {transform: translateX(-100%);}
+}
+
+.animate-slidermove
+{
+    animation: slidermove 90s linear infinite;
+}
+
+.line {
+    flex-grow: 1;
+    border-bottom: 2px dashed #000;
+    margin: 1rem;
+}
