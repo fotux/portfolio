@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\ReviewsController;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
@@ -12,3 +13,5 @@ Route::get('/kainoraštis', function(){
 Route::get('/kontaktai', function(){
     return view('kontaktai');
 });
+
+Route::get('/kontaktai', [ReviewsController::class, 'index']);

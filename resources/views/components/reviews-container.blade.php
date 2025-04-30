@@ -78,9 +78,6 @@ reviews: [
     </template>
 </main>
 
-
 </section>
-
-
 
 

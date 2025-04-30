@@ -17,7 +17,7 @@
     </div>
 
 
-       {{-- Simple form for styling purposes --}}
+       {{-- Modify everything this is just a sample for style --}}
        <form action="#" method="POST" class="space-y-4 p-4 border rounded-lg shadow-md">
         <div>
             <label for="name" class="block font-medium">Vardas</label>
@@ -46,4 +46,6 @@
         </div>
 </section>
 
+<x-test/>
 </x-layout>
+
