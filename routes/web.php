@@ -14,4 +14,8 @@ Route::get('/kontaktai', function(){
     return view('kontaktai');
 });
 
-Route::get('/kontaktai', [ReviewsController::class, 'index']);
+
+Route::get('/', [ReviewsController::class, 'index']);
+
+Route::get('/komentaras', [ReviewsController::class, 'create']);
+Route::post('/komentaras/create', [ReviewsController::class, 'store']);

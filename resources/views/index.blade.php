@@ -13,6 +13,6 @@
 
     <x-slider/>
     <x-header>Atsiliepimai</x-header>
-    <x-reviews-container/>
+    <x-reviews.reviews-container :reviews="json_encode($reviews)"/>
 
 </x-layout>

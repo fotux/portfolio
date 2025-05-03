@@ -46,6 +46,5 @@
         </div>
 </section>
 
-<x-test/>
 </x-layout>
 
