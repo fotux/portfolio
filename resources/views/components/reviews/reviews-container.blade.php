@@ -44,7 +44,9 @@
 
  <main class="flex flex-col items-center lg:items-start lg:flex-row lg:justify-evenly mb-10 lg:mb-20 flex-nowrap -mt-15 md:mt-0">
     <template x-for="(review, i) in reviews" :key="review.id">
+        <a :href="`/review/edit/${review.id}`"
         <div :class="{'hidden': i < index || i >= index+4}" class="text-center w-60">
+
             {{-- id for count check --}}
             {{-- <p x-text="review.id"></p> --}}
             <img class="mx-auto" src="{{ asset('images/logo.svg') }}" href="/" alt="Brand Logo" width="70px">
@@ -55,12 +57,17 @@
             <p x-text="review.review"></p>
 
         </div>
+        </a>
     </template>
 </main>
 
+{{-- button vissable for user to edit/delete comment --}}
+@auth
 <div class="items-center flex justify-center">
-    <x-button href="komentaras">Pridėti Komentara</x-button>
+    <x-button href="review">Pridėti Komentara</x-button>
 </div>
+@endauth
+
 
 </section>
 

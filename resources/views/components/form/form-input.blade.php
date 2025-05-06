@@ -1,6 +1,7 @@
-@props(['type' => 'text', 'name' => '', 'placeholder' => 'Įveskite'])
+@props(['type' => 'text', 'name' => '', 'placeholder' => 'Įveskite', 'value' => ''])
 
     <input
+    value="{{ $value }}"
     type="{{ $type }}"
     name="{{ $name }}"
     placeholder="{{ $placeholder }}"

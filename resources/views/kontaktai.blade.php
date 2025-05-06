@@ -1,50 +1,79 @@
 <x-layout color="black">
-<x-header>Kontaktai</x-header>
+<x-header>Susisiekite Su Manimi</x-header>
 
 
-{{-- modify later --}}
-<section class="flex justify-around items-start">
 
-    <div class="space-y-1">
-        <h2 class="font-bold">Darbo laikas: </h2>
-        <h2>Pirmadienis: nedirbu</h2>
-        <h2>Antradienis: nedirbu</h2>
-        <h2>Trečiadienis: nedirbu</h2>
-        <h2>Ketvirtadienis: nedirbu</h2>
-        <h2>Penktadienis: nedirbu</h2>
-        <h2 class="text-blue-800 font-bold">Šeštadienis nuo 8:00 iki 20:00</h2>
-        <h2>Sekmadienis: nedirbu</h2>
+<section class="flex flex-col md:flex-row justify-between items-start max-w-6xl mx-auto px-4 gap-10 md:gap-20 mb-5 md:md-20">
+
+
+
+       <form method="POST" action="/review/create" class="flex-1 space-y-4 w-full">
+        @csrf
+
+        <div>
+            <x-form.form-label for="name">Vardas</x-form.form-label>
+            <x-form.form-input type="text" name="name" placeholder="Įrašykite savo vardą"/>
+            @error('name')
+            <p class="text-red-600 text-sm mt-1">{{ $message }}</p>
+        @enderror
+        </div>
+
+        <div>
+            <x-form.form-label for="email">Elektroninis paštas</x-form.form-label>
+            <x-form.form-input type="email" name="email" placeholder="Įrašykite savo paštą"/>
+            @error('email')
+            <p class="text-red-600 text-sm mt-1">{{ $message }}</p>
+        @enderror
+        </div>
+
+        <div>
+            <x-form.form-label for="review">Atsiliepimas</x-form.form-label>
+            <x-form.form-textarea name="review" placeholder="Parašykite atsiliepimą"/>
+            @error('review')
+            <p class="text-red-600 text-sm mt-1">{{ $message }}</p>
+        @enderror
+        </div>
+
     </div>
 
+    <div class="flex justify-center">
+    <x-form.form-button>Pateikti</x-form.form-button>
+  </div>
+        </form>
 
-       {{-- Modify everything this is just a sample for style --}}
-       <form action="#" method="POST" class="space-y-4 p-4 border rounded-lg shadow-md">
-        <div>
-            <label for="name" class="block font-medium">Vardas</label>
-            <input type="text" id="name" name="name" class="w-full p-2 border rounded-md" placeholder="Įrašykite savo vardą" required>
+
+        <div class="space-y-1">
+            <h2 class="font-bold">Darbo laikas:</h2>
+            <h2>Pirmadienis: nedirbu</h2>
+            <h2>Antradienis: nedirbu</h2>
+            <h2>Trečiadienis: nedirbu</h2>
+            <h2>Ketvirtadienis: nedirbu</h2>
+            <h2>Penktadienis: nedirbu</h2>
+            <h2 class="text-blue-800 font-bold">Šeštadienis nuo 8:00 iki 20:00</h2>
+            <h2>Sekmadienis: nedirbu</h2>
+
+            <div class="mt-5 md:mt-20">
+                <h2 class="font-bold">Telefonas:</h2>
+                <h2>+37099999999</h2>
+                <h2 class="font-bold">Elektroninis paštas:</h2>
+                <h2>monikapetraityte5@gmail.com</h2>
+            </div>
         </div>
 
-        <div>
-            <label for="surname" class="block font-medium">Pavardė</label>
-            <input type="text" id="surname" name="surname" class="w-full p-2 border rounded-md" placeholder="Įrašykite savo pavardę" required>
-        </div>
-
-        <div>
-            <label for="message" class="block font-medium">Žinutė</label>
-            <textarea id="message" name="message" rows="4" class="w-full p-2 border rounded-md" placeholder="Įrašykite savo žinutę" required></textarea>
-        </div>
-
-        <div>
-            <button type="submit" class="w-full py-2 bg-blue-500 text-white rounded-md hover:bg-blue-600">Pateikti</button>
-        </div>
-    </form>
-
-
-    <div class="flex flex-col gap-1">
-        <h2><span class="font-bold">Telefonas:</span>+37099999999 </h2>
-        <h2><span class="font-bold">Emailas:</span>judu@gmail.com</h2>
-        </div>
 </section>
+
+<x-header>Kabineto Adresas Žemėlapyje</x-header>
+
+<div class="flex justify-center ">
+    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d813.9801543098305!2d23.95229491647447!3d54.92059637492568!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x46e7220e526e5937%3A0x143a553adbeff453!2sMcDonald&#39;s!5e0!3m2!1sen!2slt!4v1746544678907!5m2!1sen!2slt"
+     width="9999"
+    height="400"
+     style="border:0;"
+      allowfullscreen=""
+       loading="lazy"
+        referrerpolicy="no-referrer-when-downgrade">
+    </iframe>
+</div>
 
 </x-layout>
 

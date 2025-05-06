@@ -16,6 +16,7 @@
 </head>
 <body class="bg-gray-50">
 
+
     <x-navigation :color="$color"/>
 
     {{$slot}}

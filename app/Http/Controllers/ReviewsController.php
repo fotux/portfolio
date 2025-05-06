@@ -18,22 +18,52 @@ class ReviewsController extends Controller
     public function create()
     {
 
-        return view('components.reviews.komentaras');
+        return view('components.reviews.review');
     }
     public function store()
     {
         request()->validate([
             'name' => ['required', 'min:3'],
             'review' => ['required'],
-            'rating' => ['required', 'min:1', 'max:5']
+            'rating' => ['required', 'integer', 'between:1,5']
         ]);
 
-        $review = Reviews::create([
+        $reviews = Reviews::create([
             'name' => request('name'),
             'review' => request('review'),
             'rating' => request('rating')
         ]);
         // dd('hehllo');
         return redirect('/');
+    }
+
+    public function edit(Reviews $review)
+    {
+        return view('components.reviews.edit', ['review' => $review]);
+    }
+
+    public function update(Request $request,Reviews $review)
+    {
+        $request->validate([
+            'name' => ['required', 'min:3'],
+            'review' => ['required'],
+            'rating' => ['required', 'integer', 'between:1,5']
+        ]);
+
+        $review->update([
+            'name' => $request->input('name'),
+            'review' => $request->input('review'),
+            'rating' => $request->input('rating')
+        ]);
+
+        return redirect('/');
+    }
+
+    public function delete(Reviews $review)
+    {
+        $review->delete();
+
+        return redirect('/');
+
     }
 }
