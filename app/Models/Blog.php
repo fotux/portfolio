@@ -11,5 +11,9 @@ class Blog extends Model
     /** @use HasFactory<\Database\Factories\BlogFactory> */
     use HasFactory;
 
+    public function images()
+    {
+        return $this->hasMany(BlogImage::class);
+    }
 
 }

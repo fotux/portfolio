@@ -9,9 +9,9 @@
 
 
         <a class="hidden sm:inline" href="/">Pradinis</a>
-        <a class="hidden sm:inline" href="#blogas">Blogas</a>
+        <a class="hidden sm:inline" href="/blogas">Blogas</a>
         <a href="/kainoraštis">Kainoraštis</a>
-        <a href="/apie">Apie mane</a>
+        {{-- <a href="/apie">Apie mane</a> --}}
         <a href="/kontaktai">Kontaktai</a>
 
 

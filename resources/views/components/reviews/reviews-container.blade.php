@@ -61,12 +61,11 @@
     </template>
 </main>
 
-{{-- button vissable for user to edit/delete comment --}}
-@auth
+
 <div class="items-center flex justify-center">
     <x-button href="review">Pridėti Komentara</x-button>
 </div>
-@endauth
+
 
 
 </section>

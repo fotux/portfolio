@@ -13,6 +13,16 @@ return new class extends Migration
     {
         Schema::create('blogs', function (Blueprint $table) {
             $table->id();
+            $table->string('title');
+            $table->string('paragraph');
+            $table->timestamps();
+        });
+
+
+        Schema::create('blog_images', function (Blueprint $table) {
+            $table->id();
+            $table->foreignIdFor(App\Models\Blog::class)->constrained()->cascadeOnDelete();
+            $table->string('image_path');
             $table->timestamps();
         });
     }
@@ -23,5 +33,7 @@ return new class extends Migration
     public function down(): void
     {
         Schema::dropIfExists('blogs');
+        Schema::dropIfExists('blog_images');
     }
+
 };
