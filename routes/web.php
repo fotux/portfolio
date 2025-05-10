@@ -24,19 +24,15 @@ Route::get('/blogas', function(){
 });
 
 Route::get('/', [ReviewsController::class, 'index']);
-
 Route::get('/review', [ReviewsController::class, 'create']);
 Route::post('/review/create', [ReviewsController::class, 'store']);
-
 Route::get('/review/edit/{review}', [ReviewsController::class, 'edit']);
 Route::patch('/review/edit/{review}', [ReviewsController::class, 'update']);
-
 Route::delete('/review/edit/{review}' , [ReviewsController::class, 'delete']);
 
 
 Route::get('/login', [SessionController::class, 'index']);
 Route::post('/login', [SessionController::class, 'store']);
 Route::post('/logout', [SessionController::class, 'destroy']);
-
 Route::get('/blogas', [BlogController::class, 'index']);
 Route::get('/blogas/{blog}', [BlogController::class, 'view']);
