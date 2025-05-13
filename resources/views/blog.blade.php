@@ -10,9 +10,9 @@
     <div>
         <x-blog.blog-page-component id="{{ $post->id }}" title="{{ $post->title }}" paragraph="{{ $post->paragraph }}"
         image=" {{ $post->images->first() ? asset('storage/' . $post->images->first()->image_path) : '' }} "/>
+
     </div>
     @endforeach
-
 
 </section>
 

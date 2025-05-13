@@ -8,3 +8,4 @@
     <img class="object-cover w-full max-h-[50] h-full" src="{{ $image }}" alt="blogo paveikslėlis" >
     </a>
 </div>
+

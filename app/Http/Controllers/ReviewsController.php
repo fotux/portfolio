@@ -5,13 +5,15 @@ namespace App\Http\Controllers;
 use App\Models\Reviews;
 use Illuminate\Http\Request;
 use App\Models\User;
+use App\Models\Blog;
 
 class ReviewsController extends Controller
 {
     public function index()
     {
+        $blog = Blog::with('images')->get();
         $reviews = Reviews::select('id', 'name', 'review', 'rating')->get();
-        return view('index', \compact('reviews'));
+        return view('index', \compact('reviews', 'blog'));
     }
 
 

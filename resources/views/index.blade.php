@@ -1,5 +1,4 @@
 <x-layout>
-
     <x-hero/>
 
     <section class="container mx-auto lg:max-w-7xl ">
@@ -8,7 +7,7 @@
     <x-header id="apie">Monikos kelias: nuo pradžios iki pasiekimų grožio srityje</x-header>
     <x-about-me/>
     <x-header>Mano Blogas</x-header>
-    <x-blog-container/>
+    <x-blog.index-blog-container :blog="$blog"/>
     </section>
 
     <x-slider/>
