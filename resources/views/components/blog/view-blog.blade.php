@@ -21,8 +21,8 @@
     <div x-show="images.length === 0" class="text-center font-semibold text-red-500"> Nėra įkeltų paveilėlių</div>
     <div class="flex justify-around p-2"  x-show="images.length > 0">
         <button @click="prev" class="text-white bg-black/90 hover:bg-black px-1 md:px-3 font-bold rounded-l-2xl"><</button>
-        <div class="h-100 md:h-150 w-full items-center flex justify-center overflow-hidden" >
-        <img class="object-cover h-full w-full"
+        <div class="aspect-foto w-full items-center flex justify-center overflow-hidden" >
+        <img class="h-full w-full"
             :src="`{{ asset('storage/') }}/${images[index].image_path}`"
             alt="blogo paveikslėlis"
            >

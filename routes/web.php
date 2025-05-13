@@ -5,9 +5,7 @@ use App\Http\Controllers\ReviewsController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\SessionController;
 
-Route::get('/', function () {
-    return view('index');
-});
+
 Route::get('/kainoraštis', function(){
     return view('pricing');
 });
@@ -19,9 +17,6 @@ Route::get('/apie', function(){
     return view('/about');
 });
 
-Route::get('/blogas', function(){
-    return view('/blog');
-});
 
 Route::get('/', [ReviewsController::class, 'index']);
 Route::get('/review', [ReviewsController::class, 'create']);
@@ -34,5 +29,9 @@ Route::delete('/review/edit/{review}' , [ReviewsController::class, 'delete']);
 Route::get('/login', [SessionController::class, 'index']);
 Route::post('/login', [SessionController::class, 'store']);
 Route::post('/logout', [SessionController::class, 'destroy']);
-Route::get('/blogas', [BlogController::class, 'index']);
-Route::get('/blogas/{blog}', [BlogController::class, 'view']);
+
+
+Route::get('/blog', [BlogController::class, 'index']);
+Route::get('/blog/create', [BlogController::class, 'create']);
+Route::post('/blog/store' , [BlogController::class, 'store']);
+Route::get('/blog/{blog}', [BlogController::class, 'view']);
