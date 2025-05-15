@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\BlogController;
+use App\Http\Controllers\ContactController;
 use App\Http\Controllers\ReviewsController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\SessionController;
@@ -36,3 +37,5 @@ Route::get('/blog/create', [BlogController::class, 'create']);
 Route::post('/blog/store' , [BlogController::class, 'store']);
 Route::get('/blog/{blog}', [BlogController::class, 'view']);
 Route::delete('/blog/{blog}', [BlogController::class, 'delete']);
+
+Route::post('/kontaktai', [ContactController::class, 'send']);

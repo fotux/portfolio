@@ -16,7 +16,7 @@
         <h1 class="text-xs lg:text-lg mb-2 font-semibold">Kontaktai</h1>
         <div class="flex flex-col text-gray-300">
             <a class="text-xs md:text-sm"  href="tel:+37099999999">Telefonas: +37099999999</a>
-            <a class="text-xs md:text-sm" href="mailto:monikapetraitytė5@gmail.com">Emailas: monikapetraitytė5@gmail.com</a>
+            <a class="text-xs md:text-sm md:inline-block hidden" href="mailto:monika.petraityte.dermicare@gmail.com">Emailas: monika.petraityte.dermicare@gmail.com</a>
 
         </div>
     </div>

@@ -7,7 +7,7 @@
 
 
 
-       <form method="POST" action="/review/create" class="flex-1 space-y-4 w-full">
+       <form method="POST" action="/kontaktai" class="flex-1 space-y-4 w-full">
         @csrf
 
         <div>
@@ -56,7 +56,7 @@
                 <h2 class="font-bold">Telefonas:</h2>
                 <h2>+37099999999</h2>
                 <h2 class="font-bold">Elektroninis paštas:</h2>
-                <h2>monikapetraityte5@gmail.com</h2>
+                <h2>monika.petraityte.dermicare@gmail.com</h2>
             </div>
         </div>
 
