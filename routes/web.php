@@ -35,3 +35,4 @@ Route::get('/blog', [BlogController::class, 'index']);
 Route::get('/blog/create', [BlogController::class, 'create']);
 Route::post('/blog/store' , [BlogController::class, 'store']);
 Route::get('/blog/{blog}', [BlogController::class, 'view']);
+Route::delete('/blog/{blog}', [BlogController::class, 'delete']);

@@ -21,7 +21,7 @@
 
     <form action="/logout" method="POST">
     @csrf
-    <button type="submit" class="bg-blue-800 text-white px-2 py-1 font-semibold border-2 border-black text-sm rounded-full  ">Logout</button>
+    <button type="submit" class="bg-blue-800 text-white md:px-2 py-1 font-semibold border-2 border-black text-xs md:text-sm rounded-full  ">Logout</button>
     </form>
     @endauth
 

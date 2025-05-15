@@ -48,7 +48,7 @@
 
     {{-- img --}}
     <div class="lg:col-span-2 aspect-[4/3] relative p-4 md:p-0">
-    <img class="border-2 border-blue-800 rounded-2xl w-full object-cover h-full" :src="images[currentIndex]" alt="">
+    <img class="border-3 border-blue-800 rounded-2xl w-full object-cover h-full" :src="images[currentIndex]" alt="">
 
     <button @click="prev" class="font-extrabold absolute right-4 md:right-0 top-1/2 transform -translate-y-1/2 translate-x-1/2 border-2 px-1.5 bg-black text-white rounded-full border-blue-800">→</button>
     <button @click="next" class="font-extrabold absolute left-4 md:left-0 top-1/2 transform -translate-y-1/2 -translate-x-1/2 border-2 px-1.5 bg-black text-white rounded-full border-blue-800">←</button>

@@ -44,7 +44,9 @@
 
  <main class="flex flex-col items-center lg:items-start lg:flex-row lg:justify-evenly mb-10 lg:mb-20 flex-nowrap -mt-15 md:mt-0">
     <template x-for="(review, i) in reviews" :key="review.id">
+        @auth
         <a :href="`/review/edit/${review.id}`"
+        @endauth
         <div :class="{'hidden': i < index || i >= index+4}" class="text-center w-60">
 
             {{-- id for count check --}}

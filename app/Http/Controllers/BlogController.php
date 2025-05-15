@@ -57,4 +57,10 @@ class BlogController extends Controller
 
         return redirect('/');
     }
+
+    public function delete(Blog $blog)
+    {
+        $blog->delete();
+        return redirect('/blog');
+    }
 }

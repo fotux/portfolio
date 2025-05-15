@@ -3,7 +3,7 @@
     $offsets = ['md:-translate-y-10', 'md:translate-y-8', '', 'md:translate-y-8', 'md:-translate-y-10'];
 @endphp
 
-<section  id="blogas" class="container mx-auto flex flex-col md:flex-row md:flex  md:flex-wrap md:justify-between items-center mt-10 mb-10 md:mt-40 md:mb-40">
+<section  id="blogas" class="container mx-auto flex flex-col md:flex-row md:flex  md:flex-wrap md:justify-between items-center mt-10 mb-10 md:mt-40 md:mb-40 ">
 
 
     {{-- <x-blog.index-blog-photo link="/blog" src="{{ asset('images/before-and-after/antiaging-beauty-treatment.jpg') }}" offset="md:-translate-y-10">Skaityti Toliau</x-blog.index-blog-photo>
@@ -20,6 +20,7 @@
     @endphp
 
          <x-blog.index-blog-photo link="/blog" :src="asset('storage/' . $blogimg->images->first()->image_path)" :offset="$offset">Skaityti Toliau</x-blog.index-blog-photo>
+
     @endforeach
 
 </section>
