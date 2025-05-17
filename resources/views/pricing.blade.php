@@ -21,15 +21,17 @@
     <section class="grid grid-cols-1 md:grid-cols-2">
 
         <div>
-        <img src="{{ asset("images/dovanu_kuponas.jpg") }}" alt="dovanu kuponas" class="w-full h-auto object-cover max-h-[400px]">
+            <img src="{{ asset('images/dovanu_kuponas.jpg') }}" alt="dovanu kuponas"
+                class="w-full h-auto object-cover max-h-[400px]">
         </div>
-    <div class="flex-1 text-lg space-y-10 px-5 md:px-20 bg-gray-300/30 pt-0 md:pt-15">
-        <h1 class="font-semibold tet-xl mt-10">Ieškote išskirtinės dovanos?</h1>
-        <h1>Padovanokite galimybę pasirūpinti savimi – grožio procedūra yra ne tik maloni patirtis, bet ir rūpestingumo gestas.
-            Dovanų kuponai nuo 20 € iki 100 € – įsigyti galima susisiekus el. paštu.</h1>
+        <div class="flex-1 text-lg space-y-10 px-5 md:px-20 bg-gray-300/30 pt-0 md:pt-15">
+            <h1 class="font-semibold tet-xl mt-10">Ieškote išskirtinės dovanos?</h1>
+            <h1>Padovanokite galimybę pasirūpinti savimi – grožio procedūra yra ne tik maloni patirtis, bet ir
+                rūpestingumo gestas.
+                Dovanų kuponai nuo 20 € iki 100 € – įsigyti galima susisiekus el. paštu.</h1>
             <div class="flex justify-center mt-5">
-            <x-index.button>Susisiekite</x-index.button>
+                <x-index.button>Susisiekite</x-index.button>
+            </div>
         </div>
-    </div>
     </section>
 </x-index.layout>

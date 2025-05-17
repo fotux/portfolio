@@ -27,6 +27,5 @@ class ContactFormSubmitted extends Mailable
     public function build()
     {
         return $this->subject("Naujas pranešimas iš dermicare kontaktines formos")->view('components.emails.contact');
-
     }
 }

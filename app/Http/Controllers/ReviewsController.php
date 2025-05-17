@@ -13,7 +13,7 @@ class ReviewsController extends Controller
     {
         $blog = Blog::with('images')->get();
         $reviews = Reviews::select('id', 'name', 'review', 'rating')->get();
-        return view('index', \compact('reviews', 'blog'));
+        return view('index', compact('reviews', 'blog'));
     }
 
 
@@ -35,16 +35,15 @@ class ReviewsController extends Controller
             'review' => request('review'),
             'rating' => request('rating')
         ]);
-        // dd('hehllo');
-        return redirect('/');
+        return redirect()->route('home');
     }
 
     public function edit(Reviews $review)
     {
-        return view('components.reviews.edit', ['review' => $review]);
+        return view('components.reviews.review-edit', ['review' => $review]);
     }
 
-    public function update(Request $request,Reviews $review)
+    public function update(Request $request, Reviews $review)
     {
         $request->validate([
             'name' => ['required', 'min:3'],
@@ -58,14 +57,13 @@ class ReviewsController extends Controller
             'rating' => $request->input('rating')
         ]);
 
-        return redirect('/');
+        return redirect()->route('home');
     }
 
     public function delete(Reviews $review)
     {
         $review->delete();
 
-        return redirect('/');
-
+        return redirect()->route('home');
     }
 }

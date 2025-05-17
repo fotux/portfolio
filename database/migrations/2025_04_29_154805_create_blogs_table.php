@@ -35,5 +35,4 @@ return new class extends Migration
         Schema::dropIfExists('blogs');
         Schema::dropIfExists('blog_images');
     }
-
 };

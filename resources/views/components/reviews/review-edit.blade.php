@@ -1,12 +1,15 @@
 <x-index.layout color="black">
-    <x-index.header>Užpildykite Atsiliepimą</x-index.header>
-    <form method="POST" action="{{ route('review.store') }}" class="flex justify-center  ">
+    <x-index.header>Koreguoti/Trinti atsiliepimą</x-index.header>
+    <form method="POST" action="{{ route('review.update', ['review' => $review->id]) }}" class="flex justify-center  ">
         @csrf
+        @method('PATCH')
         <main class="space-y-4 w-full max-w-3xl p-5 md:pd-0 ">
+            {{-- {{ dd($review) }} --}}
 
             <div>
                 <x-form.form-label for="name">Vardas</x-form.form-label>
-                <x-form.form-input type="text" name="name" placeholder="Įrašykite savo vardą" />
+                <x-form.form-input value="{{ $review->name }}" type="text" name="name"
+                    placeholder="Įrašykite savo vardą" />
                 @error('name')
                     <p class="text-red-600 text-sm mt-1">{{ $message }}</p>
                 @enderror
@@ -15,13 +18,14 @@
 
             <div>
                 <x-form.form-label for="review">Atsiliepimas</x-form.form-label>
-                <x-form.form-textarea name="review" placeholder="Parašykite atsiliepimą" />
+                <x-form.form-textarea value="{{ $review->review }}" name="review"
+                    placeholder="Parašykite atsiliepimą" />
                 @error('review')
                     <p class="text-red-600 text-sm mt-1">{{ $message }}</p>
                 @enderror
             </div>
 
-            <div class="border-b-2 border-blue-800 pb-4" x-data="{ rating: 0, hover: 0 }">
+            <div class="border-b-2 border-blue-800 pb-4" x-data="{ rating: {{ $review->rating }}, hover: {{ $review->rating }} }">
                 <label class="block text-lg font-semibold text-gray-700 mb-2" for="rating">Vertinimas</label>
                 <template x-for="star in 5">
                     <button class="text-3xl" type="button"
@@ -36,13 +40,17 @@
                     <p class="text-red-600 text-sm mt-1">{{ $message }}</p>
                 @enderror
             </div>
-
-            <div class="flex justify-center">
-                <x-form.form-button>Pateikti</x-form.form-button>
+            <div class="flex justify-center pt-5">
+                <x-form.form-button>Update</x-form.form-button>
             </div>
-
-
-
         </main>
     </form>
+
+
+    <form method="POST" action="/review/edit/{{ $review->id }}" class="flex justify-center mb-5">
+        @csrf
+        @method('DELETE')
+        <x-form.form-button>Delete</x-form.form-button>
+    </form>
+
 </x-index.layout>

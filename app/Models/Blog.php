@@ -20,5 +20,4 @@ class Blog extends Model
     {
         return $this->hasMany(BlogImage::class);
     }
-
 }
