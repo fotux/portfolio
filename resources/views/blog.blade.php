@@ -9,8 +9,6 @@
 
     <section
         class="p-2 md:grid md:grid-cols-3 md:gap-4 md:gap-y-10 md:max-w-6xl md:mx-auto md:p-5 space-y-5 md:space-y-0 md:mb-10">
-
-
         @foreach ($blog as $post)
             <div>
                 <x-blog.blog-page-component id="{{ $post->id }}" title="{{ $post->title }}"
@@ -19,7 +17,6 @@
 
             </div>
         @endforeach
-
     </section>
 
 </x-index.layout>

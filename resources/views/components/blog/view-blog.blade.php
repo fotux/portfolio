@@ -35,7 +35,6 @@
                 class="font-extrabold absolute left-4 md:left-4 top-1/2 transform -translate-y-1/2 -translate-x-1/2 border-2 px-1 bg-black text-white rounded-full border-blue-800">←</button>
         </div>
 
-
         @auth
             <form method="POST" action="{{ route('blog.delete', ['blog' => $blog->id]) }}"
                 class="flex justify-center md:pt-5">
@@ -44,8 +43,6 @@
                 <x-form.form-button>Delete</x-form.form-button>
             </form>
         @endauth
-
-
 
     </div>
 </x-index.layout>

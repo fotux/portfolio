@@ -12,7 +12,6 @@
                 @enderror
             </div>
 
-
             <div>
                 <x-form.form-label for="review">Atsiliepimas</x-form.form-label>
                 <x-form.form-textarea name="review" placeholder="Parašykite atsiliepimą" />
@@ -40,9 +39,6 @@
             <div class="flex justify-center">
                 <x-form.form-button>Pateikti</x-form.form-button>
             </div>
-
-
-
         </main>
     </form>
 </x-index.layout>

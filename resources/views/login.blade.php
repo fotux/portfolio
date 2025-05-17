@@ -25,9 +25,6 @@
                     <div class="flex justify-center">
                         <x-form.form-button>Prisijungti</x-form.form-button>
                     </div>
-
-
-
                 </div>
             </form>
         </div>

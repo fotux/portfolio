@@ -5,20 +5,14 @@
 
     <a href="/"><img src="{{ asset('images/logo.svg') }}" href="/" alt="Brand Logo" width="70px"></a>
 
-
     <div class="lg:space-x-8 lg:text-sm text-gray-700 font-bold font-serif text-xs space-x-4">
-
-
         <a class="hidden sm:inline" href="{{ route('home') }}">Pradinis</a>
         <a href="{{ route('blog') }}">Blogas</a>
         <a href="{{ route('pricing') }}">Kainoraštis</a>
         <a href="{{ route('contact') }}">Kontaktai</a>
-
-
     </div>
 
     @auth
-
         <form action="/logout" method="POST">
             @csrf
             <button type="submit"

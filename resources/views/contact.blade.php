@@ -5,10 +5,7 @@
 
     <section
         class="flex flex-col md:flex-row justify-between items-start max-w-6xl mx-auto px-4 gap-10 md:gap-20 mb-5 md:md-20">
-
-
-
-        <form method="POST" action="/kontaktai" class="flex-1 space-y-4 w-full">
+        <form method="POST" action="{{ route('send.email') }}" class="flex-1 space-y-4 w-full">
             @csrf
 
             <div>
@@ -41,7 +38,6 @@
                 <x-form.form-button>Pateikti</x-form.form-button>
             </div>
         </form>
-
 
         <div class="space-y-1">
             <h2 class="font-bold">Darbo laikas:</h2>

@@ -22,18 +22,18 @@ class ReviewsController extends Controller
 
         return view('components.reviews.review');
     }
-    public function store()
+    public function store(Request $request)
     {
-        request()->validate([
+        $request->validate([
             'name' => ['required', 'min:3'],
             'review' => ['required'],
             'rating' => ['required', 'integer', 'between:1,5']
         ]);
 
         $reviews = Reviews::create([
-            'name' => request('name'),
-            'review' => request('review'),
-            'rating' => request('rating')
+            'name' => $request->input('name'),
+            'review' => $request->input('review'),
+            'rating' => $request->input('rating')
         ]);
         return redirect()->route('home');
     }

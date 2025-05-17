@@ -15,18 +15,12 @@
     <link
         href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:ital,wght@0,100..900;1,100..900&family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap"
         rel="stylesheet">
-
 </head>
 
 <body class="bg-gray-50">
-
-
     <x-index.navigation :color="$color" />
-
     {{ $slot }}
-
     <x-index.footer />
-
 </body>
 
 </html>

@@ -4,8 +4,6 @@
         @csrf
         @method('PATCH')
         <main class="space-y-4 w-full max-w-3xl p-5 md:pd-0 ">
-            {{-- {{ dd($review) }} --}}
-
             <div>
                 <x-form.form-label for="name">Vardas</x-form.form-label>
                 <x-form.form-input value="{{ $review->name }}" type="text" name="name"
@@ -14,7 +12,6 @@
                     <p class="text-red-600 text-sm mt-1">{{ $message }}</p>
                 @enderror
             </div>
-
 
             <div>
                 <x-form.form-label for="review">Atsiliepimas</x-form.form-label>
@@ -45,7 +42,6 @@
             </div>
         </main>
     </form>
-
 
     <form method="POST" action="/review/edit/{{ $review->id }}" class="flex justify-center mb-5">
         @csrf

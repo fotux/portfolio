@@ -18,9 +18,7 @@ class BlogController extends Controller
 
     public function view(Blog $blog)
     {
-        // calling a function images from model blog
         $blogImages = $blog->images;
-
         return view('components.blog.view-blog', compact('blog', 'blogImages'));
     }
 
@@ -29,9 +27,9 @@ class BlogController extends Controller
         return view('components.blog.blog-create');
     }
 
-    public function store()
+    public function store(Request $request)
     {
-        request()->validate([
+        $request->validate([
             'title' => ['required'],
             'paragraph' => ['required'],
             'image_path' => ['required', 'min:1'],
@@ -39,12 +37,12 @@ class BlogController extends Controller
         ]);
 
         $blog = Blog::create([
-            'title' => request('title'),
-            'paragraph' => request('paragraph')
+            'title' => $request->input('title'),
+            'paragraph' => $request->input('paragraph')
         ]);
 
         if (request()->hasFile('image_path')) {
-            foreach (request('image_path') as $image) {
+            foreach ($request->file('image_path') as $image) {
                 $path = $image->store('blog_images', 'public');
 
                 BlogImage::create([

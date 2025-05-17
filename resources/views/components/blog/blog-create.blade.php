@@ -12,7 +12,6 @@
                 @enderror
             </div>
 
-
             <div>
                 <x-form.form-label for="paragraph">Pastraipa</x-form.form-label>
                 <x-form.form-textarea name="paragraph" placeholder="Įveskite pastraipa" />
@@ -30,13 +29,9 @@
                 @enderror
             </div>
 
-
             <div class="flex justify-center">
                 <x-form.form-button>Pateikti</x-form.form-button>
             </div>
-
-
-
 
         </main>
     </form>

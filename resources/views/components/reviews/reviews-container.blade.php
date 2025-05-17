@@ -53,7 +53,6 @@
 
     {{-- Card --}}
 
-
     <main class="flex flex-col items-center lg:items-start lg:flex-row lg:justify-center mb-10 lg:mb-20 -mt-15 md:mt-0 ">
         <template x-for="(review, i) in reviews">
             @auth
@@ -74,14 +73,8 @@
         </template>
     </main>
 
-
-
-
-
     <div class="items-center flex justify-center">
         <x-index.button href="{{ route('review.create') }}">Pridėti Komentara</x-index.button>
     </div>
-
-
 
 </section>

@@ -1,7 +1,6 @@
 <footer class="bg-black text-white w-full lg:py-4">
     <section class="flex justify-between lg:justify-around items-start md:p-2 px-2">
 
-
         <div class="text-start">
             <h1 class="text-xs lg:text-lg mb-2 font-semibold">Nuorodos</h1>
             <div class="flex flex-col text-gray-300">

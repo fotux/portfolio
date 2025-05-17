@@ -38,4 +38,4 @@ Route::post('/blog/store', [BlogController::class, 'store'])->name('blog.store')
 Route::get('/blog/{blog}', [BlogController::class, 'view'])->name('blog.view');
 Route::delete('/blog/{blog}', [BlogController::class, 'delete'])->name('blog.delete');
 
-Route::post('/kontaktai', [ContactController::class, 'send']);
+Route::post('/contact', [ContactController::class, 'send'])->name('send.email');

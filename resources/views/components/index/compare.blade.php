@@ -41,7 +41,7 @@
 </script>
 
 <section class="lg:grid lg:grid-cols-3 lg:max-w-5xl lg:mx-auto" x-data="compare()">
-    {{--  text-column --}}
+
     <div class="lg:col-span-1 ">
         <div class="p-4">
             <h1 class="text-lg font-semibold lg:mt-10 font-serif text-blue-800" x-text=descriptions[currentIndex].title>
@@ -50,8 +50,6 @@
         </div>
     </div>
 
-
-    {{-- img --}}
     <div class="lg:col-span-2 aspect-[4/3] relative p-4 md:p-0">
         <img class="border-3 border-blue-800 rounded-2xl w-full object-cover h-full" :src="images[currentIndex]"
             alt="">
