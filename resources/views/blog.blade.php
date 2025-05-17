@@ -1,9 +1,9 @@
-<x-layout color="black">
-<x-header>Paskaitykite Mano Rašytų Patarimų</x-header>
+<x-index.layout color="black">
+<x-index.header>Paskaitykite Mano Rašytų Patarimų</x-index.header>
 
 @auth
 <div class="flex flex-center justify-center">
-<x-button href="blog/create">Pridėti Blogą</x-button>
+<x-index.button href="blog/create">Pridėti Blogą</x-index.button>
 </div>
 @endauth
 
@@ -20,5 +20,5 @@
 
 </section>
 
-</x-layout>
+</x-index.layout>
 

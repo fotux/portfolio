@@ -1,5 +1,5 @@
-<x-layout color="black">
-    <x-header>Prisijunkite</x-header>
+<x-index.layout color="black">
+    <x-index.header>Prisijunkite</x-index.header>
 
     <section class="flex justify-center items-center mb-30">
         <div class="w-full max-w-3xl p-5">
@@ -33,5 +33,5 @@
 </div>
 </section>
 
-</x-layout>
+</x-index.layout>
 

@@ -65,7 +65,7 @@
 
 
 <div class="items-center flex justify-center">
-    <x-button href="review">Pridėti Komentara</x-button>
+    <x-index.button href="review">Pridėti Komentara</x-index.button>
 </div>
 
 

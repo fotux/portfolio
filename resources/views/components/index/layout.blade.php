@@ -17,11 +17,11 @@
 <body class="bg-gray-50">
 
 
-    <x-navigation :color="$color"/>
+    <x-index.navigation :color="$color"/>
 
     {{$slot}}
 
-    <x-footer/>
+    <x-index.footer/>
 
 </body>
 </html>
