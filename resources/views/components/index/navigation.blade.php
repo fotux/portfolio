@@ -10,7 +10,14 @@
         <a href="{{ route('blog') }}">Blogas</a>
         <a href="{{ route('pricing') }}">Kainoraštis</a>
         <a href="{{ route('contact') }}">Kontaktai</a>
-    </div>
 
+    </div>
+    @auth
+        <form method="POST" action="{{ route('logout') }}">
+            @csrf
+            <button class="text-sm border-2 border-blue-800 bg-white font-bold rounded-full p-1"
+                type="submit">Logout</button>
+        </form>
+    @endauth
 
 </nav>
