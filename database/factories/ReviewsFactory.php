@@ -19,7 +19,7 @@ class ReviewsFactory extends Factory
         return [
             'name' => fake()->name(),
             'review' => fake()->sentence(),
-            'rating' => fake()->numberBetween(1,5),
+            'rating' => fake()->numberBetween(1, 5),
         ];
     }
 }

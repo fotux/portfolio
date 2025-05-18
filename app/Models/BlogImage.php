@@ -16,5 +16,4 @@ class BlogImage extends Model
     {
         return $this->belongsTo(Blog::class);
     }
-
 }

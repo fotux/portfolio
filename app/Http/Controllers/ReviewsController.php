@@ -13,7 +13,7 @@ class ReviewsController extends Controller
     {
         $blog = Blog::with('images')->get();
         $reviews = Reviews::select('id', 'name', 'review', 'rating')->get();
-        return view('index', \compact('reviews', 'blog'));
+        return view('index', compact('reviews', 'blog'));
     }
 
 
@@ -22,29 +22,28 @@ class ReviewsController extends Controller
 
         return view('components.reviews.review');
     }
-    public function store()
+    public function store(Request $request)
     {
-        request()->validate([
+        $request->validate([
             'name' => ['required', 'min:3'],
             'review' => ['required'],
             'rating' => ['required', 'integer', 'between:1,5']
         ]);
 
         $reviews = Reviews::create([
-            'name' => request('name'),
-            'review' => request('review'),
-            'rating' => request('rating')
+            'name' => $request->input('name'),
+            'review' => $request->input('review'),
+            'rating' => $request->input('rating')
         ]);
-        // dd('hehllo');
-        return redirect('/');
+        return redirect()->route('home');
     }
 
     public function edit(Reviews $review)
     {
-        return view('components.reviews.edit', ['review' => $review]);
+        return view('components.reviews.review-edit', ['review' => $review]);
     }
 
-    public function update(Request $request,Reviews $review)
+    public function update(Request $request, Reviews $review)
     {
         $request->validate([
             'name' => ['required', 'min:3'],
@@ -58,14 +57,13 @@ class ReviewsController extends Controller
             'rating' => $request->input('rating')
         ]);
 
-        return redirect('/');
+        return redirect()->route('home');
     }
 
     public function delete(Reviews $review)
     {
         $review->delete();
 
-        return redirect('/');
-
+        return redirect()->route('home');
     }
 }

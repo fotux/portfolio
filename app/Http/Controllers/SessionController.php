@@ -10,7 +10,7 @@ class SessionController extends Controller
 {
     public function index()
     {
-       return view('login');
+        return view('login');
     }
     public function store()
     {
@@ -19,8 +19,7 @@ class SessionController extends Controller
             'password' => ['required']
         ]);
 
-        if (! Auth::attempt($attributes))
-        {
+        if (! Auth::attempt($attributes)) {
             throw ValidationException::withMessages([
                 'name' => 'Neteisingas vardas arba slaptažodis'
             ]);

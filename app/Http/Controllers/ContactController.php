@@ -21,6 +21,6 @@ class ContactController extends Controller
             new ContactFormSubmitted($data['name'], $data['email'], $data['review'])
         );
 
-        return redirect('/');
+        return redirect()->route('home');
     }
 }

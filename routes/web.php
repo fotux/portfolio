@@ -7,24 +7,24 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\SessionController;
 
 
-Route::get('/kainoraštis', function(){
+Route::get('/pricing', function () {
     return view('pricing');
-});
+})->name('pricing');
 
-Route::get('/kontaktai', function(){
-    return view('kontaktai');
-});
-Route::get('/apie', function(){
+Route::get('/contact', function () {
+    return view('contact');
+})->name('contact');
+Route::get('/apie', function () {
     return view('/about');
-});
+})->name('about');
 
 
-Route::get('/', [ReviewsController::class, 'index']);
-Route::get('/review', [ReviewsController::class, 'create']);
-Route::post('/review/create', [ReviewsController::class, 'store']);
-Route::get('/review/edit/{review}', [ReviewsController::class, 'edit']);
-Route::patch('/review/edit/{review}', [ReviewsController::class, 'update']);
-Route::delete('/review/edit/{review}' , [ReviewsController::class, 'delete']);
+Route::get('/', [ReviewsController::class, 'index'])->name('home');
+Route::get('/review', [ReviewsController::class, 'create'])->name('review.create');
+Route::post('/review/create', [ReviewsController::class, 'store'])->name('review.store');
+Route::get('/review/edit/{review}', [ReviewsController::class, 'edit'])->name('review.edit');
+Route::patch('/review/edit/{review}', [ReviewsController::class, 'update'])->name('review.update');
+Route::delete('/review/edit/{review}', [ReviewsController::class, 'delete'])->name('review.delete');
 
 
 Route::get('/login', [SessionController::class, 'index']);
@@ -32,10 +32,10 @@ Route::post('/login', [SessionController::class, 'store']);
 Route::post('/logout', [SessionController::class, 'destroy']);
 
 
-Route::get('/blog', [BlogController::class, 'index']);
-Route::get('/blog/create', [BlogController::class, 'create']);
-Route::post('/blog/store' , [BlogController::class, 'store']);
-Route::get('/blog/{blog}', [BlogController::class, 'view']);
-Route::delete('/blog/{blog}', [BlogController::class, 'delete']);
+Route::get('/blog', [BlogController::class, 'index'])->name('blog');
+Route::get('/blog/create', [BlogController::class, 'create'])->name('blog.create');
+Route::post('/blog/store', [BlogController::class, 'store'])->name('blog.store');
+Route::get('/blog/{blog}', [BlogController::class, 'view'])->name('blog.view');
+Route::delete('/blog/{blog}', [BlogController::class, 'delete'])->name('blog.delete');
 
-Route::post('/kontaktai', [ContactController::class, 'send']);
+Route::post('/contact', [ContactController::class, 'send'])->name('send.email');
