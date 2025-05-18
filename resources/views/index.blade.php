@@ -1,6 +1,5 @@
 <x-index.layout>
     <x-index.hero />
-
     <section class="container mx-auto lg:max-w-7xl ">
         <x-index.header>Pradinė odos būklė ir rezultatas iškart po procedūros</x-index.header>
         <x-index.compare />

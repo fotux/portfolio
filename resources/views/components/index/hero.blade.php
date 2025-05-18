@@ -11,7 +11,7 @@
             savimi, kuriant harmoniją tarp švelnumo ir profesionalumo.</p>
         <div
             class="relative inline-block mt-5 transition-all duration-200 bg-blue-800 hover:bg-blue-700 rounded-full border-2 border-black/50 ">
-            <a href="/kontaktai">
+            <a href="{{ route('contact') }}">
                 <button
                     class="flex items-center bg-transparent text-white text-sm rounded-2xl pr-4 font-sans font-semibold "><img
                         src="{{ asset('images/phone.png') }}" alt="" width="30px"
