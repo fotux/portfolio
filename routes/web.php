@@ -1,10 +1,25 @@
 <?php
 
+use App\Http\Controllers\ProfileController;
+use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\BlogController;
 use App\Http\Controllers\ContactController;
 use App\Http\Controllers\ReviewsController;
-use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\SessionController;
+
+
+
+Route::get('/dashboard', function () {
+    return view('dashboard');
+})->middleware(['auth', 'verified'])->name('dashboard');
+
+
+Route::middleware('auth')->group(function () {
+    Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
+    Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
+    Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
+});
+
+require __DIR__ . '/auth.php';
 
 
 Route::get('/pricing', function () {
@@ -25,12 +40,6 @@ Route::post('/review/create', [ReviewsController::class, 'store'])->name('review
 Route::get('/review/edit/{review}', [ReviewsController::class, 'edit'])->name('review.edit');
 Route::patch('/review/edit/{review}', [ReviewsController::class, 'update'])->name('review.update');
 Route::delete('/review/edit/{review}', [ReviewsController::class, 'delete'])->name('review.delete');
-
-
-Route::get('/login', [SessionController::class, 'index']);
-Route::post('/login', [SessionController::class, 'store']);
-Route::post('/logout', [SessionController::class, 'destroy']);
-
 
 Route::get('/blog', [BlogController::class, 'index'])->name('blog');
 Route::get('/blog/create', [BlogController::class, 'create'])->name('blog.create');
